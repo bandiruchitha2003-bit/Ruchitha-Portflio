@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bandi Ruchitha | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--card:#1a2540;--ink:#f1f1f4;--mute:#b0b2bb;--pri:#ea77dc;--pri2:#f58bff;--acc:#2dd4bf;--soft:#243153;--line:#2f3d63;--shadow:0 10px 30px rgba(0,0,0,.4);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 'DM Sans',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;line-height:1.15}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--pri);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1080px;margin:auto;padding:0 22px}
+section{padding:84px 0}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:10px}
+.sub{color:var(--mute);max-width:56ch;margin-bottom:36px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 20px 'Bricolage Grotesque',sans-serif}.logo i{color:var(--pri);font-style:normal}
+.links{display:flex;gap:4px}
+.links a{padding:8px 12px;border-radius:999px;font-size:15px;color:var(--mute);transition:.2s}
+.links a:hover,.links a.on{background:var(--soft);color:var(--pri)}
+.burger{display:none;background:var(--soft);border:0;border-radius:10px;width:42px;height:42px;font-size:20px;color:var(--ink);cursor:pointer}
+@media(max-width:860px){.burger{display:block}.links{position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);padding:10px 22px 18px;border-bottom:1px solid var(--line);display:none}.links.open{display:flex}}
+.hero{padding:70px 0 90px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hi{display:inline-block;background:var(--soft);color:var(--pri);padding:6px 14px;border-radius:999px;font-weight:600;font-size:14px;margin-bottom:18px}
+.hero h1{font-size:clamp(40px,7vw,72px);font-weight:800;letter-spacing:-.02em}
+.hero h1 span{background:linear-gradient(90deg,var(--pri),var(--pri2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font:600 clamp(18px,2.6vw,24px) 'Bricolage Grotesque',sans-serif;margin:16px 0 14px;min-height:1.4em}
+.role b{color:var(--acc)}.role em{display:inline-block;width:2px;height:1em;background:var(--pri);vertical-align:-2px;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p.lead{color:var(--mute);max-width:50ch;margin-bottom:28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:12px;font-weight:600;border:2px solid transparent;cursor:pointer;font-family:inherit;font-size:16px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn.p{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;box-shadow:0 10px 24px rgba(75,75,232,.3)}
+.btn.o{border-color:var(--pri);color:var(--pri);background:transparent}
+.photo{position:relative;width:min(320px,80vw);aspect-ratio:1;margin:auto}
+.photo .ring{position:absolute;inset:-14px;border-radius:50%;border:2px dashed var(--pri2);opacity:.5;animation:spin 24s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo .frame{position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,var(--pri),var(--acc));padding:5px;overflow:hidden;box-shadow:var(--shadow);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;border-radius:50%;display:block;background:var(--soft)}
+.chip{position:absolute;background:var(--card);box-shadow:var(--shadow);border-radius:999px;padding:6px 14px;font-weight:600;font-size:14px;animation:float 5s ease-in-out infinite}
+.c1{top:2%;right:-6%}.c2{bottom:10%;left:-8%;animation-delay:-2s}.c3{bottom:-4%;right:6%;animation-delay:-3s}
+.hero .wrap>*{animation:rise .8s both}.hero .wrap>*:nth-child(2){animation-delay:.2s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr;text-align:center}.hero p.lead{margin-inline:auto}.btns{justify-content:center}.photo{order:-1;width:min(240px,70vw)}}
+.grid{display:grid;gap:20px}.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow);transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--pri2)}
+.ico{width:48px;height:48px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+.card h3{font-size:20px;margin-bottom:6px}.card p{color:var(--mute);font-size:15px}
+.tag{display:inline-block;background:var(--soft);color:var(--pri);border-radius:8px;padding:3px 10px;font-size:13px;font-weight:600;margin:12px 6px 0 0}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:start}
+.facts div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.facts span{color:var(--mute)}.facts b{text-align:right}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.bar{margin-bottom:18px}.bar>div:first-child{display:flex;justify-content:space-between;font-weight:600;margin-bottom:6px}
+.track{height:10px;background:var(--soft);border-radius:99px;overflow:hidden}.fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--pri),var(--acc));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.tl{border-left:3px solid var(--soft);padding-left:26px;position:relative}
+.tl::before{content:"";position:absolute;left:-9px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--pri);box-shadow:0 0 0 6px var(--soft)}
+.res{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+@media(max-width:640px){.res{grid-template-columns:1fr}}
+.contact .card{text-align:center}.contact .ico{margin:0 auto 14px;width:58px;height:58px;font-size:26px}
+.contact .big{font:700 22px 'Bricolage Grotesque',sans-serif;margin:6px 0 16px;display:block}
+footer{text-align:center;padding:30px 22px;color:var(--mute);border-top:1px solid var(--line);font-size:14px}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#home">Ruchitha<i>.Bandi</i></a>
+<button class="burger" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+<div class="links"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#certs">Certifications</a><a href="#resume">Resume</a><a href="#contact">Contact</a></div></div></nav>
+
+<header class="hero" id="home"><div class="wrap">
+<div><span class="hi">👋 Hello, I am from Eluru</span>
+<h1>Bandi <span>Ruchitha</span></h1>
+<div class="role">Aspiring <b id="typed"></b><em></em></div>
+<p class="lead">MCA (IT) student who enjoys turning ideas into clean, responsive web apps with Java, React and SQL.</p>
+<div class="btns"><a class="btn p" href="#projects">View Projects</a><a class="btn o" href="#contact">Contact Me</a></div></div>
+<div class="photo"><div class="ring"></div>
+<div class="frame"><img id="pic" alt="Bandi Ruchitha" width="300" height="300" src="WhatsApp Image 2026-08-24 at 12.06.08 AM.jpeg"></div>
+<span class="chip c1">⚛️ React</span><span class="chip c2">☕ Java</span><span class="chip c3">🗄️ SQL</span></div>
+</div></header>
+
+<section id="about"><div class="wrap"><h2 class="rv">About Me</h2><p class="sub rv">A quick introduction.</p>
+<div class="about rv"><div class="card"><p style="font-size:17px;color:var(--ink)">I'm Bandi Ruchitha, an MCA student specializing in IT at ISTS. I enjoy building user-friendly web applications and learning how the front end and back end work together. I'm looking for a Frontend or Full Stack Developer role where I can grow, contribute and keep learning.</p></div>
+<div class="card facts"><div><span>Name</span><b>Bandi Ruchitha</b></div><div><span>Degree</span><b>MCA (IT)</b></div><div><span>College</span><b>ISTS</b></div><div style="border:0"><span>Goal</span><b>Frontend / Full Stack Developer</b></div></div></div></div></section>
+
+<section id="skills" style="background:var(--card)"><div class="wrap"><h2 class="rv">Skills</h2><p class="sub rv">Technologies I use to build projects.</p>
+<div class="grid g2 rv" id="bars"></div></div></section>
+
+<section id="education"><div class="wrap"><h2 class="rv">Education</h2><p class="sub rv">My academic path.</p>
+<div class="tl rv"><div class="card"><div class="ico">🎓</div><h3>Master of Computer Applications (MCA)</h3><p>Branch: Information Technology</p><span class="tag">ISTS</span></div></div></div></section>
+
+<section id="projects" style="background:var(--card)"><div class="wrap"><h2 class="rv">Projects</h2><p class="sub rv">Things I have built.</p>
+<div class="grid g2">
+<div class="card rv"><div class="ico">🛒</div><h3>Ecommerce Application</h3><p>An online shopping app where users browse products, add items to a cart and place orders.</p><span class="tag">React</span><span class="tag">Java</span><span class="tag">SQL</span></div>
+<div class="card rv"><div class="ico">🎬</div><h3>Movie Ticket Booking System using AI</h3><p>A booking system that lets users pick movies, shows and seats, with AI features to improve the experience.</p><span class="tag">AI</span><span class="tag">Java</span><span class="tag">SQL</span></div>
+</div></div></section>
+
+<section id="certs"><div class="wrap"><h2 class="rv">Certifications</h2><p class="sub rv">Proof of practical learning.</p>
+<div class="grid g2"><div class="card rv"><div class="ico">🐍</div><h3>Python Project</h3><p>Certified for completing a hands-on Python project.</p></div>
+<div class="card rv"><div class="ico">☕</div><h3>Java Project</h3><p>Certified for completing a hands-on Java project.</p></div></div></div></section>
+
+<section id="resume" style="background:var(--card)"><div class="wrap"><h2 class="rv">Resume</h2><p class="sub rv">A summary of my profile.</p>
+<div class="card res rv"><div><h3>Bandi Ruchitha</h3><p>MCA (IT), ISTS · Frontend / Full Stack Developer</p><span class="tag">Java</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">SQL</span></div>
+<button class="btn p" onclick="window.print()">Download Resume</button></div></div></section>
+
+<section id="contact" class="contact"><div class="wrap"><h2 class="rv">Contact</h2><p class="sub rv">Let's talk about opportunities.</p>
+<div class="grid g2">
+<div class="card rv"><div class="ico">💬</div><h3>WhatsApp</h3><span class="big">+91 98489 74967</span><a class="btn p" href="https://wa.me/919848974967" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+<div class="card rv"><div class="ico">📞</div><h3>Phone</h3><span class="big">+91 98489 74967</span><a class="btn o" href="tel:+919848974967">Call Now</a></div>
+</div></div></section>
+<footer>© 2026 Bandi Ruchitha. All rights reserved.</footer>
+
+<script>
+const roles=["Frontend Developer","Full Stack Developer","React Developer"];let r=0,c=0,d=false;const t=document.getElementById('typed');
+(function tick(){const w=roles[r];t.textContent=w.slice(0,c);if(!d){c++;if(c>w.length){d=true;return setTimeout(tick,1400)}}else{c--;if(c<0){c=0;d=false;r=(r+1)%roles.length}}setTimeout(tick,d?40:80)})();
+const skills=[["Java",80],["HTML",90],["CSS",85],["JavaScript",78],["React",75],["SQL",78]];
+document.getElementById('bars').innerHTML=skills.map(s=>`<div class="bar"><div><span>${s[0]}</span><span>${s[1]}%</span></div><div class="track"><div class="fill" data-w="${s[1]}"></div></div></div>`).join('');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const secs=[...document.querySelectorAll('section,header')],as=[...document.querySelectorAll('.links a')];
+addEventListener('scroll',()=>{let id='home';secs.forEach(s=>{if(scrollY>=s.offsetTop-140)id=s.id});as.forEach(a=>a.classList.toggle('on',a.hash==='#'+id))});
+as.forEach(a=>a.onclick=()=>document.querySelector('.links').classList.remove('open'));
+</script>
+</body>
+</html>
